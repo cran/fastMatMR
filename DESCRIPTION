@@ -1,6 +1,6 @@
 Package: fastMatMR
 Title: High-Performance Matrix Market File Operations
-Version: 1.2.4
+Version: 1.2.5
 Authors@R: 
     c(
     person("Rohit", "Goswami", email = "rgoswami@ieee.org", role = c("aut", "cre"),
@@ -27,6 +27,6 @@ BugReports: https://github.com/ropensci/fastMatMR/issues
 Config/testthat/edition: 3
 VignetteBuilder: knitr
 NeedsCompilation: yes
-Packaged: 2023-11-02 11:47:17 UTC; rgoswami
+Packaged: 2023-11-03 16:54:15 UTC; rgoswami
 Repository: CRAN
-Date/Publication: 2023-11-02 16:00:02 UTC
+Date/Publication: 2023-11-03 22:00:06 UTC

@@ -12,7 +12,7 @@
 
 <meta name="author" content="Rohit Goswami" />
 
-<meta name="date" content="2023-11-02" />
+<meta name="date" content="2023-11-03" />
 
 <title>Getting Started</title>
 
@@ -340,7 +340,7 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Getting Started</h1>
 <h4 class="author">Rohit Goswami</h4>
-<h4 class="date">2023-11-02</h4>
+<h4 class="date">2023-11-03</h4>
 
 
 
@@ -433,15 +433,15 @@ library:</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a>spmat <span class="ot">&lt;-</span> Matrix<span class="sc">::</span><span class="fu">Matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="cn">NA</span>), <span class="at">nrow =</span> <span class="dv">2</span>, <span class="at">sparse =</span> <span class="cn">TRUE</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>temp_file_sp_na <span class="ot">&lt;-</span> <span class="fu">tempfile</span>(<span class="at">fileext =</span> <span class="st">&quot;.mtx&quot;</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>Matrix<span class="sc">::</span><span class="fu">writeMM</span>(spmat, temp_file_sp_na)</span>
-<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a><span class="co">#&gt; NULL</span></span>
-<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>Matrix<span class="sc">::</span><span class="fu">readMM</span>(temp_file_sp_na)</span>
-<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="co">#&gt; 2 x 2 sparse Matrix of class &quot;dgTMatrix&quot;</span></span>
-<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="co">#&gt;              </span></span>
-<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="co">#&gt; [1,] 1  3e+00</span></span>
-<span id="cb7-9"><a href="#cb7-9" tabindex="-1"></a><span class="co">#&gt; [2,] . 1e+308</span></span></code></pre></div>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>Matrix<span class="sc">::</span><span class="fu">readMM</span>(temp_file_sp_na)</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a><span class="do">## NULL</span></span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a><span class="do">## 2 x 2 sparse Matrix of class &quot;dgTMatrix&quot;</span></span>
+<span id="cb7-7"><a href="#cb7-7" tabindex="-1"></a><span class="do">## [1,] 1  3e+00</span></span>
+<span id="cb7-8"><a href="#cb7-8" tabindex="-1"></a><span class="do">## [2,] . 1e+308</span></span></code></pre></div>
 <p>However, as can be seen above, <code>NA</code> values are handled
-incorrectly, and dense matrices or vectors cannot be read or written in
-the matrix market format by the <code>Matrix</code> library.</p>
+incorrectly, and cause overflow. Dense matrices or vectors cannot be
+read or written in the matrix market format by the <code>Matrix</code>
+library.</p>
 </div>
 <div id="reading-back-in-python" class="section level3">
 <h3>Reading Back In Python</h3>

@@ -1,10 +1,10 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
 
-## ---- eval=FALSE--------------------------------------------------------------
+## ----eval=FALSE---------------------------------------------------------------
 #  install.packages("devtools")
 #  devtools::install_github("ropensci/fastMatMR")
 
@@ -32,9 +32,13 @@ temp_file_vec_r <- tempfile(fileext = ".mtx")
 vec_to_fmm(vec, temp_file_vec_r)
 fmm_to_vec(temp_file_vec_r)
 
-## -----------------------------------------------------------------------------
-spmat <- Matrix::Matrix(c(1, 0, 3, NA), nrow = 2, sparse = TRUE)
-temp_file_sp_na <- tempfile(fileext = ".mtx")
-Matrix::writeMM(spmat, temp_file_sp_na)
-Matrix::readMM(temp_file_sp_na)
+## ----eval=FALSE---------------------------------------------------------------
+#  spmat <- Matrix::Matrix(c(1, 0, 3, NA), nrow = 2, sparse = TRUE)
+#  temp_file_sp_na <- tempfile(fileext = ".mtx")
+#  Matrix::writeMM(spmat, temp_file_sp_na)
+#  Matrix::readMM(temp_file_sp_na)
+#  ## NULL
+#  ## 2 x 2 sparse Matrix of class "dgTMatrix"
+#  ## [1,] 1  3e+00
+#  ## [2,] . 1e+308
 
